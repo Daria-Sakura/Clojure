@@ -14,8 +14,8 @@
 (defn calculate-potentials [points distance]
   (let [point-potential 
        (fn [x]
-         (try(let [len (reduce + 0 (map #(Math/exp (- (* alpha (distance % x)))) points))]
-         (list len x))(catch Exception e str ""))
+         (let [len (reduce + 0 (map #(Math/exp (- (* alpha (distance % x)))) points))]
+         (list len x))
 		)]
   (map point-potential points))
 )
@@ -72,16 +72,16 @@
        )
 )
 
-(defn hamming-distance [P1 p2]
+(defn hamming-distance [p1 p2]
   ( count
     (filter true? 
-            (map not= P1 p2)
+            (map not= p1 p2)
     )
   )
 )
 
-(defn euclid-distance [P1 p2]
-  (->> (map - P1 p2)
+(defn euclid-distance [p1 p2]
+  (->> (map - p1 p2)
        (map #(* % %))
        (reduce +) 
        (Math/sqrt)
