@@ -10,7 +10,12 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar clusterization-0.1.0-standalone.jar [args]
+    $ java -jar clusterization-0.1.0-standalone.jar "C:/irises.txt" h
+	
+	
+    $ java -jar clusterization-0.1.0-standalone.jar "C:/irises.txt" e
+	
+	lein test
 
 ## Options
 
