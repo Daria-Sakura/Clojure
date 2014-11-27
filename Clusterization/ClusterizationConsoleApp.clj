@@ -1,5 +1,6 @@
 (ns clusterization.core
   (:gen-class))
+(use 'clojure.java.io)
 
 (defn clusterization [path destType]
       (println path)
